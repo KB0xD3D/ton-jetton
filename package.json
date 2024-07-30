@@ -1,8 +1,8 @@
 {
     "name": "Jetton-Tact",
-    "version": "0.0.1",
+    "version": "1",
     "scripts": {
-        "start": "proxychains4 lueprint run",
+        "start": "blueprint run",
         "build": "blueprint build",
         "test": "jest --verbose"
     },

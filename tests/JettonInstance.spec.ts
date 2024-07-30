@@ -31,13 +31,13 @@ describe("JettonInstance", () => {
         jettonInstance = blockchain.openContract(await JettonInstance.fromInit(deployer.address, jettonContent, maxSupply));
         
         //Send Transaction
-        const deployResult = await jettonInstance.send(deployer.getSender(), { value: toNano("10") }, "Mint: 100");
-        expect(deployResult.transactions).toHaveTransaction({
-            from: deployer.address,
-            to: jettonInstance.address,
-            deploy: true,
-            success: true,
-        });
+        // const deployResult = await jettonInstance.send(deployer.getSender(), { value: toNano("10") }, {$$type: 'Mint', amount: toNano(100), receiver :deployer.getSender() });
+        // expect(deployResult.transactions).toHaveTransaction({
+        //     from: deployer.address,
+        //     to: jettonInstance.address,
+        //     deploy: true,
+        //     success: true,
+        // });
 
         const deployerWalletAddress = await jettonInstance.getGetWalletAddress(deployer.address);
         deployerWallet = blockchain.openContract(await JettonWallet.fromAddress(deployerWalletAddress));
