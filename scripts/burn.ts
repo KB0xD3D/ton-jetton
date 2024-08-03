@@ -27,7 +27,7 @@ export async function run(provider: NetworkProvider) {
     const burnMessage: Burn = {
         $$type: "Burn",
         queryId: 0n,
-        amount: toNano(500),
+        amount: toNano(100),
         responseDestination:  provider.sender().address as Address,
         customPayload: beginCell().endCell(),
     };
@@ -36,7 +36,7 @@ export async function run(provider: NetworkProvider) {
     await walletInstance.send(
         provider.sender(),
         {
-            value: toNano(500),
+            value: toNano(0.05),
         },
         burnMessage
     );

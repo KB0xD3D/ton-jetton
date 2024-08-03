@@ -16,7 +16,7 @@ export async function run(provider: NetworkProvider) {
     // let jettonContent = buildOnchainMetadata(jettonParams);
     
     // let maxSupply = toNano(10000000000);
-    let deployed = Address.parse('EQDO6MnHSUEdB_cGVeEzEAYvg7ArUXYGkHJ5tBpD7224OjC0');
+    let deployed = Address.parse('kQDO6MnHSUEdB_cGVeEzEAYvg7ArUXYGkHJ5tBpD7224Oos-');
 
     // const jettonInstance = provider.open(await JettonInstance.fromInit(provider.sender().address as Address, jettonContent, maxSupply));
     const jettonInstance = provider.open(await JettonInstance.fromAddress(deployed as Address));
